@@ -35,8 +35,8 @@ if (-not $OutputPath) {
 # Get all services, modify DisplayName, select properties, and then sort
 $Services = Get-Service | ForEach-Object {
     [PSCustomObject]@{
-        DisplayName = $_.DisplayName -replace ' ', '_'
-        Name        = $_.Name
+        DisplayName = $_.ServiceDisplayamed -replace ' ', '_'
+        Name        = $_.ServiceNamed
     }
 } | Sort-Object DisplayName
 
